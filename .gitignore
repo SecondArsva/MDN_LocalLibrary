@@ -1,0 +1,49 @@
+# Archivos de sistema
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Entornos virtuales
+.venv/
+venv/
+env/
+
+# Archivos de configuración locales
+*.env
+*.ini
+*.cfg
+*.local
+*.log
+
+# Archivos de base de datos
+db.sqlite3
+db.sqlite3-journal
+
+# Archivos de migraciones compilados
+*/migrations/__pycache__/
+*/migrations/*.pyc
+
+# Archivos estáticos y de media generados
+staticfiles/
+media/
+
+# Archivos de compilación / cache de IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Archivos de coverage y pruebas
+.coverage
+coverage.xml
+htmlcov/
+.pytest_cache/
+.tox/
+.mypy_cache/
+
+# Archivos de despliegue
+*.pot
+*.mo
+
+# Archivos de Docker
+*.pid
