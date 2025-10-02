@@ -16,7 +16,7 @@ env/
 *.log
 
 # Archivos de base de datos
-db.sqlite3
+#db.sqlite3
 db.sqlite3-journal
 
 # Archivos de migraciones compilados
