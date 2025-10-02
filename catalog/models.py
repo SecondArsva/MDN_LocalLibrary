@@ -44,7 +44,7 @@ class Book(models.Model):
     # ManyToManyField used because genre can contain many books. Books can cover many genres.
     # Genre class has already been defined so we can specify the object above.
     
-    languaje = models.ForeignKey('Language', on_delete=models.SET_NULL, null=True)
+    language = models.ForeignKey('Language', on_delete=models.SET_NULL, null=True)
 
     def __str__(self):
         """String for representing the Model object."""
@@ -53,6 +53,11 @@ class Book(models.Model):
     def get_absolute_url(self):
         """Returns the URL to access a detail record for this book."""
         return reverse('genre-detail', args=[str(self.id)])
+    
+    def display_genre(self):
+        """Create a string for the Genre. This is required to display genre in Admin."""
+        return ', '.join(genre.name for genre in self.genre.all()[:2])
+    display_genre.short_description = 'Genre' # Como el verbose_name, pero para métodos.
 
 class BookInstance(models.Model):
     """Model representing a specific copy of a book (i.e. that can be borrowed from the library)."""
@@ -88,7 +93,7 @@ class Author(models.Model):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     date_of_birth = models.DateField(null=True, blank=True)
-    date_of_dead = models.DateField('Died', null=True, blank=True)
+    date_of_death = models.DateField('Died', null=True, blank=True) # El verbose_name es el nombre que se mostrará sustituyendo el nombre de variable en las representaciones visuales
 
     class Meta:
         ordering = ['last_name', 'first_name']
