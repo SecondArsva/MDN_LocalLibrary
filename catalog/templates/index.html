@@ -13,5 +13,11 @@
     <li><strong>Copies:</strong> {{ num_instances }}</li>
     <li><strong>Copies available:</strong> {{ num_instances_available }}</li>
     <li><strong>Authors:</strong> {{ num_authors }}</li>
+    <li><strong>Genres:</strong> {{ num_genres }}</li>
+    <form method="get">
+        <input type="text" name="q" value="{{ q }}" placeholder="Palabra a buscar…">
+        <button type="submit">Buscar</button>
+    </form>
+    <li><strong>Matches:</strong> {{ num_book_match }}</li>
   </ul>
 {% endblock %}
